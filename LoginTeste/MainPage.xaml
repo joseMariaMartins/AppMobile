@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginTeste.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Padding="20,10" ColumnDefinitions="*,Auto">
+            <ImageButton 
+                Source="caixa.png"
+                HeightRequest="40"
+                WidthRequest="40"
+                Aspect="AspectFit"
+                HorizontalOptions="Start"
+                BackgroundColor="Transparent"/>
+
+            <ImageButton
+                Grid.Column="1"
+                WidthRequest="40"
+                HeightRequest="40"
+                CornerRadius="20"
+                Clicked="Button_Clicked"
+                BackgroundColor="{DynamicResource PageBackgroundColor}"
+                Source="{DynamicResource AppSolImage}"/>
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1" 
+                             VerticalOptions="Center" 
+                             HorizontalOptions="Center"
+                             Spacing="20">
+
+            <Image
+                Source="caixa.png"
+                HeightRequest="100"
+                WidthRequest="100"
+                Aspect="AspectFit"/>
+
+            <Label 
+                Text="Olá, Bem-vindo!"
+                FontSize="24"
+                TextColor="{DynamicResource AppTextColor}"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"/>
+
+            <Label 
+                x:Name="lblUserName"
+                FontSize="20"
+                HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="2" 
+              Padding="20,10"
+              ColumnDefinitions="*,*,*"
+              ColumnSpacing="10">
+
+            <Button
+                Grid.Column="0"
+                Text="Cadastrar"
+                Clicked="btnPagCadastro_Clicked"
+                HeightRequest="60"
+                CornerRadius="10"
+                FontSize="14"
+                FontAttributes="Bold"
+                TextColor="{DynamicResource AppTextColor}"
+                BackgroundColor="{DynamicResource AppButtonColor}"/>
+
+            <Button
+                Grid.Column="1"
+                Text="Produtos"
+                Clicked="btnProdutosPage_Clicked"
+                HeightRequest="60"
+                CornerRadius="10"
+                FontSize="14"
+                FontAttributes="Bold"
+                TextColor="{DynamicResource AppTextColor}"
+                BackgroundColor="{DynamicResource AppButtonColor}"/>
+
+            <Button
+                Grid.Column="2"
+                Text="Usuario"
+                Clicked="btnUsuario_Clicked"
+                HeightRequest="60"
+                CornerRadius="10"
+                FontSize="14"
+                FontAttributes="Bold"
+                TextColor="{DynamicResource AppTextColor}"
+                BackgroundColor="{DynamicResource AppButtonColor}"/>
+        </Grid>
+    </Grid>
+</ContentPage>

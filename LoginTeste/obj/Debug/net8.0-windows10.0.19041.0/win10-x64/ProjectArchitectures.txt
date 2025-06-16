@@ -1,0 +1,1 @@
+C:\Users\azs90\source\repos\AppMobile\LoginTeste\AppCadastro.csproj;x64

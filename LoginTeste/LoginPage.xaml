@@ -1,0 +1,85 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="LoginTeste.LoginPage"
+            NavigationPage.HasNavigationBar="False"
+            BackgroundColor="{DynamicResource PageBackgroundColor}">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ImageButton Grid.Row="0"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                Margin="20,10"
+                WidthRequest="40"
+                HeightRequest="40"
+                CornerRadius="20"
+                Clicked="Button_Clicked"  
+                BackgroundColor="{DynamicResource PageBackgroundColor}"
+                Source="{DynamicResource AppSolImage}"/>
+
+        <VerticalStackLayout Grid.Row="1"
+                             VerticalOptions="Center"
+                             Spacing="25"
+                             Padding="30,0">
+
+            <Image Source="caixa.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HeightRequest="120"
+                   WidthRequest="120"
+                   Margin="0,0,0,20"/>
+
+            <Label Text="Login de usuário"  
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" 
+                   TextColor="{DynamicResource AppTextColor}"
+                   Margin="0,0,0,10"/>
+
+            <Label Text="Usuário" 
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"/>
+            <Entry x:Name="txtUsuario" 
+                   ReturnType="Next"
+                   HeightRequest="50"
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"
+                   BackgroundColor="{DynamicResource AppButtonColor}"
+                   Placeholder="Digite seu usuário"/>
+
+            <Label Text="Senha" 
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"/>
+            <Entry x:Name="txtSenha" 
+                   IsPassword="True" 
+                   ReturnType="Go" 
+                   Completed="txtSenha_Completed"
+                   HeightRequest="50"
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"
+                   BackgroundColor="{DynamicResource AppButtonColor}"
+                   Placeholder="Digite sua senha"/>
+        </VerticalStackLayout>
+
+        <Button Grid.Row="2"
+                x:Name="btnLogin"
+                Text="Entrar"
+                Clicked="btnLogin_Clicked"
+                HeightRequest="50"
+                CornerRadius="25"
+                FontSize="16"
+                FontAttributes="Bold"
+                Margin="20,0,20,20"
+                HorizontalOptions="Fill"
+                TextColor="{DynamicResource AppTextColor}"
+                BackgroundColor="{DynamicResource AppButtonColor}"/>
+    </Grid>
+</ContentPage>

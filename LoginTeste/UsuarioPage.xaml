@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCadastro.UsuarioPage"
+             Title="Perfil do Usuário"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto,*,Auto" RowSpacing="0">
+        <!-- Cabeçalho com botões de navegação e tema -->
+        <Grid Grid.Row="0" Padding="20,10" ColumnDefinitions="Auto,*,Auto">
+            <ImageButton 
+                Source="back_icon.png"
+                HeightRequest="40"
+                WidthRequest="40"
+                Aspect="AspectFit"
+                BackgroundColor="Transparent"
+                Clicked="OnBackButtonClicked"/>
+
+            <ImageButton
+                Grid.Column="2"
+                Source="{AppThemeBinding Light=light_theme_icon.png, Dark=dark_theme_icon.png}"
+                WidthRequest="40"
+                HeightRequest="40"
+                Aspect="AspectFit"
+                CornerRadius="20"
+                Clicked="ToggleTheme_Clicked"
+                BackgroundColor="Transparent"/>
+        </Grid>
+
+        <!-- Conteúdo Principal -->
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="25">
+                <Frame CornerRadius="20" 
+                       Padding="20"
+                       BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2D2D2D}">
+                    <StackLayout Spacing="15">
+                        <Image
+                            Source="user_avatar.png"
+                            HeightRequest="120"
+                            WidthRequest="120"
+                            Aspect="AspectFit"
+                            HorizontalOptions="Center"/>
+
+                        <Label Text="Meu Perfil"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="{AppThemeBinding Light=#000000, Dark=#FFFFFF}"/>
+
+                        <BoxView HeightRequest="1" 
+                                 Color="{AppThemeBinding Light=#E0E0E0, Dark=#444444}"
+                                 Margin="0,10"/>
+
+                        <Grid ColumnDefinitions="Auto,*" RowSpacing="20">
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Text="Nome:"
+                                   FontAttributes="Bold"
+                                   TextColor="{AppThemeBinding Light=#000000, Dark=#FFFFFF}"/>
+                            <Label Grid.Row="0" Grid.Column="1"
+                                   x:Name="lblNomeUsuario"
+                                   TextColor="{AppThemeBinding Light=#333333, Dark=#CCCCCC}"/>
+
+                            <Label Grid.Row="1" Grid.Column="0"
+                                   Text="Senha:"
+                                   FontAttributes="Bold"
+                                   TextColor="{AppThemeBinding Light=#000000, Dark=#FFFFFF}"/>
+                            <Label Grid.Row="1" Grid.Column="1"
+                                   x:Name="lblSenhaUsuario"
+                                   TextColor="{AppThemeBinding Light=#333333, Dark=#CCCCCC}"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Rodapé com dois botões -->
+        <Grid Grid.Row="2" Padding="20,10" ColumnSpacing="15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    Text="Voltar"
+                    Clicked="OnBackButtonClicked"
+                    HeightRequest="60"
+                    CornerRadius="10"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    BackgroundColor="#2b0b98"/>
+
+            <Button Grid.Column="1"
+                    Text="Logout"
+                    Clicked="OnLogoutClicked"
+                    HeightRequest="60"
+                    CornerRadius="10"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    BackgroundColor="#FF0000"/>
+        </Grid>
+    </Grid>
+</ContentPage>

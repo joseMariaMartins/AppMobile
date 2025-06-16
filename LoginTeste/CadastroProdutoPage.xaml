@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCadastro.CadastroProdutoPage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Padding="20,10" ColumnDefinitions="*,Auto">
+            <ImageButton 
+                Source="caixa.png"
+                HeightRequest="40"
+                WidthRequest="40"
+                Aspect="AspectFit"
+                HorizontalOptions="Start"
+                BackgroundColor="Transparent"
+                Clicked="CaixaButton_Clicked"/>
+
+            <ImageButton
+                Grid.Column="1"
+                WidthRequest="40"
+                HeightRequest="40"
+                CornerRadius="20"
+                Clicked="Button_Clicked"
+                BackgroundColor="{DynamicResource PageBackgroundColor}"
+                Source="{DynamicResource AppSolImage}"/>
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1" 
+                            VerticalOptions="Center" 
+                            Spacing="15"
+                            Padding="30,0">
+
+            <Label Text="Nome do Produto:" 
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"/>
+            <Entry x:Name="nomeProd" 
+                   Placeholder="Digite o nome do produto" 
+                   HeightRequest="50"
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"
+                   BackgroundColor="{DynamicResource AppEntryBackgroundColor}"/>
+
+            <Label Text="Descrição do Produto:"
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"/>
+            <Entry x:Name="descProd" 
+                   Placeholder="Descreva o produto" 
+                   HeightRequest="50"
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"
+                   BackgroundColor="{DynamicResource AppEntryBackgroundColor}"/>
+
+            <Label Text="Categoria do Produto:"
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"/>
+            <Entry x:Name="categoriaProd" 
+                   Placeholder="Qual a categoria do produto"
+                   HeightRequest="50"
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"
+                   BackgroundColor="{DynamicResource AppEntryBackgroundColor}"/>
+
+            <Label Text="Preço do Produto:" 
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"/>
+            <Entry x:Name="precoProd" 
+                   Placeholder="Qual o preço do produto" 
+                   Keyboard="Numeric"
+                   HeightRequest="50"
+                   FontSize="14"
+                   TextColor="{DynamicResource AppTextColor}"
+                   BackgroundColor="{DynamicResource AppEntryBackgroundColor}"/>
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="2" Padding="20" ColumnDefinitions="*,*">
+            <Button x:Name="btnVoltar"
+                    Text="Voltar"
+                    Grid.Column="0"
+                    Clicked="btnVoltar_Clicked"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    FontSize="14"
+                    Margin="0,0,10,0"
+                    HorizontalOptions="Fill"
+                    TextColor="{DynamicResource AppTextColor}"
+                    BackgroundColor="{DynamicResource AppButtonColor}"/>
+
+            <Button x:Name="btnConcluirCadastro"
+                    Text="Cadastrar"
+                    Grid.Column="1"
+                    Clicked="btnConcluirCadastro_Clicked"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    FontSize="14"
+                    Margin="10,0,0,0"
+                    HorizontalOptions="Fill"
+                    TextColor="{DynamicResource AppTextColor}"
+                    BackgroundColor="{DynamicResource AppButtonColor}"/>
+        </Grid>
+    </Grid>
+</ContentPage>
